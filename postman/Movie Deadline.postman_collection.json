@@ -1,0 +1,765 @@
+{
+	"info": {
+		"_postman_id": "aaeec2e8-df51-43e2-adf3-c28724ba9970",
+		"name": "Movie Deadline",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13908026"
+	},
+	"item": [
+		{
+			"name": "Quản lý người dùng",
+			"item": [
+				{
+					"name": "Lấy thông tin người dùng",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/api/quanLyNguoiDung/v1/layDanhSachNguoiDung",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"quanLyNguoiDung",
+								"v1",
+								"layDanhSachNguoiDung"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lấy thông tin người dùng phân trang",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/api/quanLyNguoiDung/v1/layDanhSachNguoiDungPhanTrang",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"quanLyNguoiDung",
+								"v1",
+								"layDanhSachNguoiDungPhanTrang"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "3",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": "2",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Tìm kiếm người dùng",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/api/quanLyNguoiDung/v1/timKiemNguoiDung/123",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"quanLyNguoiDung",
+								"v1",
+								"timKiemNguoiDung",
+								"123"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lấy thông tin tài khoản",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0YWlfa2hvYW4iOiIxMTExMTExMWEiLCJob190ZW4iOiJsb25nQkIiLCJlbWFpbCI6ImxvQGdtYWlsLmNvbSIsInNvX2R0IjoiMDMxMzQ2NTY5NSIsIm1hdF9raGF1IjoiMTIzNDU2NyIsImxvYWlfbmd1b2lfZHVuZyI6IlF1YW5UcmkiLCJpYXQiOjE2NjUwNzAyNTAsImV4cCI6MTY2NTMyOTQ1MH0.qKS2SHArajtKazwUSUa_MuIN4tFKHvJTBiHlyRJOzLI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{localhost}}/api/quanLyNguoiDung/v1/thongTinTaiKhoan",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"quanLyNguoiDung",
+								"v1",
+								"thongTinTaiKhoan"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Thêm người dùng",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"taiKhoan\": \"bom1\",\r\n    \"matKhau\": \"123456\",\r\n    \"email\": \"tung1@gmail.com\",\r\n    \"soDt\": \"0123456789\",\r\n    \"hoTen\": \"Tùng Nguyễn\",\r\n    \"loaiND\":\"QuanTri\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/api/quanLyNguoiDung/v1/themNguoiDung",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"quanLyNguoiDung",
+								"v1",
+								"themNguoiDung"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cập nhật tài khoản",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0YWlfa2hvYW4iOiJib20iLCJob190ZW4iOiJUw7luZyBOZ3V54buFbiIsImVtYWlsIjoidHVuZ0BnbWFpbC5jb20iLCJzb19kdCI6IjAxMjM0NTY3ODkiLCJtYXRfa2hhdSI6IjEyMzQ1NiIsImxvYWlfbmd1b2lfZHVuZyI6IktoYWNoSGFuZyIsImlhdCI6MTY2NTA3MzM3MiwiZXhwIjoxNjY1MzMyNTcyfQ.-DX7mstLF3sNTe2ZKDKBbO11rIp6bT21279CdubXD64",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"taiKhoan\": \"bom\",\r\n    \"matKhau\": \"123456\",\r\n    \"email\": \"tung@gmail.com\",\r\n    \"soDt\": \"0123456789\",\r\n    \"hoTen\": \"Tùng Nguyễn\",\r\n    \"loaiND\": \"QuanTri\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/api/quanLyNguoiDung/v1/capNhatTaiKhoan?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0YWlfa2hvYW4iOiIxMTExMTExMWEiLCJob190ZW4iOiJsb25nQkIiLCJlbWFpbCI6ImxvQGdtYWlsLmNvbSIsInNvX2R0IjoiMDMxMzQ2NTY5NSIsIm1hdF9raGF1IjoiMTIzNDU2NyIsImxvYWlfbmd1b2lfZHVuZyI6IlF1YW5UcmkiLCJpYXQiOjE2NjUwNzAyNTAsImV4cCI6MTY2NTMyOTQ1MH0.qKS2SHArajtKazwUSUa_MuIN4tFKHvJTBiHlyRJOzLI",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"quanLyNguoiDung",
+								"v1",
+								"capNhatTaiKhoan"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0YWlfa2hvYW4iOiIxMTExMTExMWEiLCJob190ZW4iOiJsb25nQkIiLCJlbWFpbCI6ImxvQGdtYWlsLmNvbSIsInNvX2R0IjoiMDMxMzQ2NTY5NSIsIm1hdF9raGF1IjoiMTIzNDU2NyIsImxvYWlfbmd1b2lfZHVuZyI6IlF1YW5UcmkiLCJpYXQiOjE2NjUwNzAyNTAsImV4cCI6MTY2NTMyOTQ1MH0.qKS2SHArajtKazwUSUa_MuIN4tFKHvJTBiHlyRJOzLI"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Xoá người dùng",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/api/quanLyNguoiDung/v1/xoaNguoiDung/0901959488",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"quanLyNguoiDung",
+								"v1",
+								"xoaNguoiDung",
+								"0901959488"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Xác thực người dùng",
+			"item": [
+				{
+					"name": "Đăng nhập",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"taiKhoan\": \"bom\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/api/auth/v1/login",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"v1",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Đăng ký",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"taiKhoan\": \"bom\",\r\n    \"matKhau\": \"123456\",\r\n    \"email\": \"tung@gmail.com\",\r\n    \"soDt\": \"0123456789\",\r\n    \"hoTen\": \"Tùng Nguyễn\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/api/auth/v1/signup",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"v1",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Quản lý phim",
+			"item": [
+				{
+					"name": "Lấy danh sách banner",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/api/quanLyPhim/v1/layDanhSachBanner",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"quanLyPhim",
+								"v1",
+								"layDanhSachBanner"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lấy danh sách phim",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/api/quanLyPhim/v1/layDanhSachPhim",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"quanLyPhim",
+								"v1",
+								"layDanhSachPhim"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lấy thông tin phim chi tiết",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/api/quanLyPhim/v1/layThongTinPhim/1",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"quanLyPhim",
+								"v1",
+								"layThongTinPhim",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lấy danh sách phim phân trang",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/api/quanLyPhim/v1/layDanhSachPhimPhanTrang",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"quanLyPhim",
+								"v1",
+								"layDanhSachPhimPhanTrang"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": "2",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lấy danh sách phim theo ngay",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/api/quanLyPhim/v1/layDanhSachPhimTheoNgay?tuNgay=14-05-2022&denNgay=27-05-2022&page=1&size=2",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"quanLyPhim",
+								"v1",
+								"layDanhSachPhimTheoNgay"
+							],
+							"query": [
+								{
+									"key": "tuNgay",
+									"value": "14-05-2022"
+								},
+								{
+									"key": "denNgay",
+									"value": "27-05-2022"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "size",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cập nhật phim",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"contentType": "",
+									"type": "file",
+									"src": "/D:/Download/afloat_again_by_gydw1n_ddshap1.png"
+								},
+								{
+									"key": "tenPhim",
+									"value": "LIÊN MINH SIÊU THÚ DC",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "trailler",
+									"value": "https://www.youtube.com/watch?v=L2umMe5uRnk",
+									"type": "text"
+								},
+								{
+									"key": "moTa",
+									"value": "Siêu Cún Krypto và Superman là cặp bài trùng không thể tách rời, cùng sở hữu những siêu năng lực tương tự và cùng nhau chiến đấu chống lại tội phạm tại thành phố Metropolis. ",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "ngayKhoiChieu",
+									"value": "15-06-2022",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "danhGia",
+									"value": "7",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "hot",
+									"value": "true",
+									"contentType": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "dangChieu",
+									"value": "false",
+									"contentType": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "sapChieu",
+									"value": "true",
+									"contentType": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{localhost}}/api/quanLyPhim/v1/capNhatPhimUpload/6",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"quanLyPhim",
+								"v1",
+								"capNhatPhimUpload",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Thêm phim",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"contentType": "",
+									"type": "file",
+									"src": "/D:/Download/cat.png"
+								},
+								{
+									"key": "tenPhim",
+									"value": "One Piece Film: Gold",
+									"type": "text"
+								},
+								{
+									"key": "trailer",
+									"value": "https://www.youtube.com/watch?v=NmyGak3l12Y",
+									"type": "text"
+								},
+								{
+									"key": "moTa",
+									"value": "One Piece Film Gold là bộ phim điện ảnh thứ 13 của thương hiệu One Piece, bộ phim này được công chiếu tại Nhật Bản vào ngày 23 tháng 7 năm 2016. Bộ phim sẽ do Miyamoto Hiroaki đảm nhiệm vị trí đạo diễn và tác giả Oda Eiichiro giữ vai trò giám sát quá trình sản xuất bộ phim giống như với bộ phim trước đó",
+									"type": "text"
+								},
+								{
+									"key": "ngayKhoiChieu",
+									"value": "16-07-2022",
+									"type": "text"
+								},
+								{
+									"key": "danhGia",
+									"value": "9",
+									"type": "text"
+								},
+								{
+									"key": "hot",
+									"value": "true",
+									"contentType": "",
+									"type": "text"
+								},
+								{
+									"key": "dangChieu",
+									"value": "true",
+									"contentType": "",
+									"type": "text"
+								},
+								{
+									"key": "sapChieu",
+									"value": "false",
+									"contentType": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{localhost}}/api/quanLyPhim/v1/themPhimUpload",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"quanLyPhim",
+								"v1",
+								"themPhimUpload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Xóa phim",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/api/quanLyPhim/v1/xoaPhim/10560",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"quanLyPhim",
+								"v1",
+								"xoaPhim",
+								"10560"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Quản lý rạp",
+			"item": [
+				{
+					"name": "Lấy thông tin hệ thống rạp",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/api/quanLyRap/v1/LayThongTinHeThongRap",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"quanLyRap",
+								"v1",
+								"LayThongTinHeThongRap"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lấy thông tin cụm rạp",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/api/quanLyRap/v1/LayThongTinCumRapTheoHeThong?maHeThongRap=CGV",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"quanLyRap",
+								"v1",
+								"LayThongTinCumRapTheoHeThong"
+							],
+							"query": [
+								{
+									"key": "maHeThongRap",
+									"value": "CGV"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lấy thông tin lịch chiếu theo hệ thống rạp",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/api/quanLyRap/v1/LayThongTinLichChieuHeThongRap?maHeThongRap=CGV",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"quanLyRap",
+								"v1",
+								"LayThongTinLichChieuHeThongRap"
+							],
+							"query": [
+								{
+									"key": "maHeThongRap",
+									"value": "CGV"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lấy thông tin lịch chiếu theo phim",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/api/quanLyRap/v1/LayThongTinLichChieuPhim?maPhim=1",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"quanLyRap",
+								"v1",
+								"LayThongTinLichChieuPhim"
+							],
+							"query": [
+								{
+									"key": "maPhim",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Quản lý đặt vé",
+			"item": [
+				{
+					"name": "Tạo lịch chiếu",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"maPhim\": 3,\r\n    \"ngayGioKhoiChieu\": \"2022-10-03T11:09:28.71\",\r\n    \"maRap\": 3,\r\n    \"giaVe\": 70000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/api/quanLyVe/v1/TaoLichChieu",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"quanLyVe",
+								"v1",
+								"TaoLichChieu"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Đặt vé",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"taiKhoan\": \"0941234234\",\r\n    \"maLichChieu\": 2,\r\n    \"maGhe\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/api/quanLyVe/v1/DatVe",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"quanLyVe",
+								"v1",
+								"DatVe"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "localhost",
+			"value": "http://localhost:8080"
+		}
+	]
+}
