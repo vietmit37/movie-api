@@ -16,7 +16,8 @@ services:
   app:
     depends_on:
       - mysql_db
-    build: . #image: undertarke/node:v1
+    # build: .
+    image: vietmit37/node:v1
     container_name: node-movie
     env_file: .env
     environment:
@@ -27,7 +28,7 @@ services:
       - DB_DIALECT=$DB_DIALECT
       - DB_PORT=$DB_PORT
     ports:
-      - "3030:8080"
+      - "80:8080"
     networks:
       - node-network
 

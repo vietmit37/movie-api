@@ -1,8 +1,8 @@
 const express = require("express");
-const bodyParser = require("body-parser");
 const app = express();
 const cors = require("cors");
 const rootRouter = require("./routes/index");
+require("dotenv").config();
 
 app.use("/image", express.static("image"));
 app.use(express.json());
