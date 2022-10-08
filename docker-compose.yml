@@ -28,7 +28,7 @@ services:
       - DB_DIALECT=$DB_DIALECT
       - DB_PORT=$DB_PORT
     ports:
-      - "80:8080"
+      - "3030:8080"
     networks:
       - node-network
 
