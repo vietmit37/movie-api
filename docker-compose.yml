@@ -16,8 +16,9 @@ services:
   app:
     depends_on:
       - mysql_db
-    # build: .
-    image: vietmit37/node:v1
+    build: .
+    # Sử dụng để deploy
+    # image: vietmit37/node:v1
     container_name: node-movie
     env_file: .env
     environment:
